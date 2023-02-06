@@ -1,9 +1,14 @@
 import 'package:flash_cards/routing/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-void main() {
+Future<void> main() async {
   runApp(const MyApp());
+  await Supabase.initialize(
+    url: 'https://xyzcompany.supabase.co',
+    anonKey: 'public-anon-key',
+  );
 }
 
 class MyApp extends StatelessWidget {

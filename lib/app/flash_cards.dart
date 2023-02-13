@@ -1,4 +1,5 @@
 import 'package:flash_cards/consts/colors.dart';
+import 'package:flash_cards/routing/router.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class FlashCards extends StatelessWidget {
         useMaterial3: true,
         scheme: FlexScheme.wasabi,
       ),
-      // routerConfig: router,
+      routerConfig: router,
     );
   }
 }

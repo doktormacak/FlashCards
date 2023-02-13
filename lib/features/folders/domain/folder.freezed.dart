@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'deck.dart';
+part of 'folder.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,32 +14,32 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Deck _$DeckFromJson(Map<String, dynamic> json) {
-  return _Deck.fromJson(json);
+Folder _$FolderFromJson(Map<String, dynamic> json) {
+  return _Folder.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Deck {
+mixin _$Folder {
   String get name => throw _privateConstructorUsedError;
   String? get id => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DeckCopyWith<Deck> get copyWith => throw _privateConstructorUsedError;
+  $FolderCopyWith<Folder> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DeckCopyWith<$Res> {
-  factory $DeckCopyWith(Deck value, $Res Function(Deck) then) =
-      _$DeckCopyWithImpl<$Res, Deck>;
+abstract class $FolderCopyWith<$Res> {
+  factory $FolderCopyWith(Folder value, $Res Function(Folder) then) =
+      _$FolderCopyWithImpl<$Res, Folder>;
   @useResult
   $Res call({String name, String? id});
 }
 
 /// @nodoc
-class _$DeckCopyWithImpl<$Res, $Val extends Deck>
-    implements $DeckCopyWith<$Res> {
-  _$DeckCopyWithImpl(this._value, this._then);
+class _$FolderCopyWithImpl<$Res, $Val extends Folder>
+    implements $FolderCopyWith<$Res> {
+  _$FolderCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -66,18 +66,19 @@ class _$DeckCopyWithImpl<$Res, $Val extends Deck>
 }
 
 /// @nodoc
-abstract class _$$_DeckCopyWith<$Res> implements $DeckCopyWith<$Res> {
-  factory _$$_DeckCopyWith(_$_Deck value, $Res Function(_$_Deck) then) =
-      __$$_DeckCopyWithImpl<$Res>;
+abstract class _$$_FolderCopyWith<$Res> implements $FolderCopyWith<$Res> {
+  factory _$$_FolderCopyWith(_$_Folder value, $Res Function(_$_Folder) then) =
+      __$$_FolderCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name, String? id});
 }
 
 /// @nodoc
-class __$$_DeckCopyWithImpl<$Res> extends _$DeckCopyWithImpl<$Res, _$_Deck>
-    implements _$$_DeckCopyWith<$Res> {
-  __$$_DeckCopyWithImpl(_$_Deck _value, $Res Function(_$_Deck) _then)
+class __$$_FolderCopyWithImpl<$Res>
+    extends _$FolderCopyWithImpl<$Res, _$_Folder>
+    implements _$$_FolderCopyWith<$Res> {
+  __$$_FolderCopyWithImpl(_$_Folder _value, $Res Function(_$_Folder) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -86,7 +87,7 @@ class __$$_DeckCopyWithImpl<$Res> extends _$DeckCopyWithImpl<$Res, _$_Deck>
     Object? name = null,
     Object? id = freezed,
   }) {
-    return _then(_$_Deck(
+    return _then(_$_Folder(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -101,10 +102,11 @@ class __$$_DeckCopyWithImpl<$Res> extends _$DeckCopyWithImpl<$Res, _$_Deck>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Deck with DiagnosticableTreeMixin implements _Deck {
-  const _$_Deck({required this.name, this.id});
+class _$_Folder with DiagnosticableTreeMixin implements _Folder {
+  const _$_Folder({required this.name, this.id});
 
-  factory _$_Deck.fromJson(Map<String, dynamic> json) => _$$_DeckFromJson(json);
+  factory _$_Folder.fromJson(Map<String, dynamic> json) =>
+      _$$_FolderFromJson(json);
 
   @override
   final String name;
@@ -113,14 +115,14 @@ class _$_Deck with DiagnosticableTreeMixin implements _Deck {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Deck(name: $name, id: $id)';
+    return 'Folder(name: $name, id: $id)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'Deck'))
+      ..add(DiagnosticsProperty('type', 'Folder'))
       ..add(DiagnosticsProperty('name', name))
       ..add(DiagnosticsProperty('id', id));
   }
@@ -129,7 +131,7 @@ class _$_Deck with DiagnosticableTreeMixin implements _Deck {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Deck &&
+            other is _$_Folder &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.id, id) || other.id == id));
   }
@@ -141,21 +143,22 @@ class _$_Deck with DiagnosticableTreeMixin implements _Deck {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DeckCopyWith<_$_Deck> get copyWith =>
-      __$$_DeckCopyWithImpl<_$_Deck>(this, _$identity);
+  _$$_FolderCopyWith<_$_Folder> get copyWith =>
+      __$$_FolderCopyWithImpl<_$_Folder>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DeckToJson(
+    return _$$_FolderToJson(
       this,
     );
   }
 }
 
-abstract class _Deck implements Deck {
-  const factory _Deck({required final String name, final String? id}) = _$_Deck;
+abstract class _Folder implements Folder {
+  const factory _Folder({required final String name, final String? id}) =
+      _$_Folder;
 
-  factory _Deck.fromJson(Map<String, dynamic> json) = _$_Deck.fromJson;
+  factory _Folder.fromJson(Map<String, dynamic> json) = _$_Folder.fromJson;
 
   @override
   String get name;
@@ -163,5 +166,6 @@ abstract class _Deck implements Deck {
   String? get id;
   @override
   @JsonKey(ignore: true)
-  _$$_DeckCopyWith<_$_Deck> get copyWith => throw _privateConstructorUsedError;
+  _$$_FolderCopyWith<_$_Folder> get copyWith =>
+      throw _privateConstructorUsedError;
 }

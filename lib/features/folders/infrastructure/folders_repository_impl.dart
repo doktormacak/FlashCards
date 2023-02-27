@@ -9,7 +9,7 @@ class FoldersRepositoryImpl implements FoldersRepository {
   FoldersRepositoryImpl(this._apiClient);
 
   @override
-  Future<FoldersDataResponse> fetchAllDecks() async {
+  Future<FoldersDataResponse> fetchAllFolders() async {
     return FoldersDataResponse.fromJson(
         (await _apiClient.get(ApiConfig.folders)).data);
   }

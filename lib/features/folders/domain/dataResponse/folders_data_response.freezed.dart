@@ -20,7 +20,7 @@ FoldersDataResponse _$FoldersDataResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$FoldersDataResponse {
-  List<Folder> get folders => throw _privateConstructorUsedError;
+  List<Folder> get data => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +34,7 @@ abstract class $FoldersDataResponseCopyWith<$Res> {
           FoldersDataResponse value, $Res Function(FoldersDataResponse) then) =
       _$FoldersDataResponseCopyWithImpl<$Res, FoldersDataResponse>;
   @useResult
-  $Res call({List<Folder> folders});
+  $Res call({List<Folder> data});
 }
 
 /// @nodoc
@@ -50,12 +50,12 @@ class _$FoldersDataResponseCopyWithImpl<$Res, $Val extends FoldersDataResponse>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? folders = null,
+    Object? data = null,
   }) {
     return _then(_value.copyWith(
-      folders: null == folders
-          ? _value.folders
-          : folders // ignore: cast_nullable_to_non_nullable
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
               as List<Folder>,
     ) as $Val);
   }
@@ -69,7 +69,7 @@ abstract class _$$_FoldersDataResponseCopyWith<$Res>
       __$$_FoldersDataResponseCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Folder> folders});
+  $Res call({List<Folder> data});
 }
 
 /// @nodoc
@@ -83,12 +83,12 @@ class __$$_FoldersDataResponseCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? folders = null,
+    Object? data = null,
   }) {
     return _then(_$_FoldersDataResponse(
-      folders: null == folders
-          ? _value._folders
-          : folders // ignore: cast_nullable_to_non_nullable
+      data: null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
               as List<Folder>,
     ));
   }
@@ -99,23 +99,23 @@ class __$$_FoldersDataResponseCopyWithImpl<$Res>
 class _$_FoldersDataResponse
     with DiagnosticableTreeMixin
     implements _FoldersDataResponse {
-  const _$_FoldersDataResponse({required final List<Folder> folders})
-      : _folders = folders;
+  const _$_FoldersDataResponse({required final List<Folder> data})
+      : _data = data;
 
   factory _$_FoldersDataResponse.fromJson(Map<String, dynamic> json) =>
       _$$_FoldersDataResponseFromJson(json);
 
-  final List<Folder> _folders;
+  final List<Folder> _data;
   @override
-  List<Folder> get folders {
-    if (_folders is EqualUnmodifiableListView) return _folders;
+  List<Folder> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_folders);
+    return EqualUnmodifiableListView(_data);
   }
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'FoldersDataResponse(folders: $folders)';
+    return 'FoldersDataResponse(data: $data)';
   }
 
   @override
@@ -123,7 +123,7 @@ class _$_FoldersDataResponse
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'FoldersDataResponse'))
-      ..add(DiagnosticsProperty('folders', folders));
+      ..add(DiagnosticsProperty('data', data));
   }
 
   @override
@@ -131,13 +131,13 @@ class _$_FoldersDataResponse
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_FoldersDataResponse &&
-            const DeepCollectionEquality().equals(other._folders, _folders));
+            const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_folders));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
 
   @JsonKey(ignore: true)
   @override
@@ -155,14 +155,14 @@ class _$_FoldersDataResponse
 }
 
 abstract class _FoldersDataResponse implements FoldersDataResponse {
-  const factory _FoldersDataResponse({required final List<Folder> folders}) =
+  const factory _FoldersDataResponse({required final List<Folder> data}) =
       _$_FoldersDataResponse;
 
   factory _FoldersDataResponse.fromJson(Map<String, dynamic> json) =
       _$_FoldersDataResponse.fromJson;
 
   @override
-  List<Folder> get folders;
+  List<Folder> get data;
   @override
   @JsonKey(ignore: true)
   _$$_FoldersDataResponseCopyWith<_$_FoldersDataResponse> get copyWith =>

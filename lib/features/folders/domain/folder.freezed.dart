@@ -20,8 +20,8 @@ Folder _$FolderFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Folder {
+  int? get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +33,7 @@ abstract class $FolderCopyWith<$Res> {
   factory $FolderCopyWith(Folder value, $Res Function(Folder) then) =
       _$FolderCopyWithImpl<$Res, Folder>;
   @useResult
-  $Res call({String name, String? id});
+  $Res call({int? id, String name});
 }
 
 /// @nodoc
@@ -49,18 +49,18 @@ class _$FolderCopyWithImpl<$Res, $Val extends Folder>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
     Object? id = freezed,
+    Object? name = null,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
     ) as $Val);
   }
 }
@@ -71,7 +71,7 @@ abstract class _$$_FolderCopyWith<$Res> implements $FolderCopyWith<$Res> {
       __$$_FolderCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, String? id});
+  $Res call({int? id, String name});
 }
 
 /// @nodoc
@@ -84,18 +84,18 @@ class __$$_FolderCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
     Object? id = freezed,
+    Object? name = null,
   }) {
     return _then(_$_Folder(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 }
@@ -103,19 +103,19 @@ class __$$_FolderCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Folder with DiagnosticableTreeMixin implements _Folder {
-  const _$_Folder({required this.name, this.id});
+  const _$_Folder({this.id, required this.name});
 
   factory _$_Folder.fromJson(Map<String, dynamic> json) =>
       _$$_FolderFromJson(json);
 
   @override
-  final String name;
+  final int? id;
   @override
-  final String? id;
+  final String name;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Folder(name: $name, id: $id)';
+    return 'Folder(id: $id, name: $name)';
   }
 
   @override
@@ -123,8 +123,8 @@ class _$_Folder with DiagnosticableTreeMixin implements _Folder {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'Folder'))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('id', id));
+      ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('name', name));
   }
 
   @override
@@ -132,13 +132,13 @@ class _$_Folder with DiagnosticableTreeMixin implements _Folder {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Folder &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.id, id) || other.id == id));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, id);
+  int get hashCode => Object.hash(runtimeType, id, name);
 
   @JsonKey(ignore: true)
   @override
@@ -155,15 +155,15 @@ class _$_Folder with DiagnosticableTreeMixin implements _Folder {
 }
 
 abstract class _Folder implements Folder {
-  const factory _Folder({required final String name, final String? id}) =
+  const factory _Folder({final int? id, required final String name}) =
       _$_Folder;
 
   factory _Folder.fromJson(Map<String, dynamic> json) = _$_Folder.fromJson;
 
   @override
-  String get name;
+  int? get id;
   @override
-  String? get id;
+  String get name;
   @override
   @JsonKey(ignore: true)
   _$$_FolderCopyWith<_$_Folder> get copyWith =>

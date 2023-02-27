@@ -9,7 +9,7 @@ part of 'folders_data_response.dart';
 _$_FoldersDataResponse _$$_FoldersDataResponseFromJson(
         Map<String, dynamic> json) =>
     _$_FoldersDataResponse(
-      folders: (json['folders'] as List<dynamic>)
+      data: (json['data'] as List<dynamic>)
           .map((e) => Folder.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
@@ -17,5 +17,5 @@ _$_FoldersDataResponse _$$_FoldersDataResponseFromJson(
 Map<String, dynamic> _$$_FoldersDataResponseToJson(
         _$_FoldersDataResponse instance) =>
     <String, dynamic>{
-      'folders': instance.folders,
+      'data': instance.data,
     };

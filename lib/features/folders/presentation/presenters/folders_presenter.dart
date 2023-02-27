@@ -14,14 +14,14 @@ class FoldersPresenter extends RequestProvider<List<Folder>> {
   final FoldersInteractor foldersInteractor;
 
   FoldersPresenter(this.ref, this.foldersInteractor) {
-    loadDecks();
+    loadFolders();
   }
 
-  Future<void> loadDecks() async {
+  Future<void> loadFolders() async {
     return executeRequest(
       requestBuilder: () async {
-        List<Folder> allDecks = await foldersInteractor.fetchDecks();
-        return allDecks;
+        List<Folder> allFolders = await foldersInteractor.fetchFolders();
+        return allFolders;
       },
     );
   }

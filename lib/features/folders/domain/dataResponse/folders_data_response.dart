@@ -8,7 +8,7 @@ part 'folders_data_response.g.dart';
 @freezed
 class FoldersDataResponse with _$FoldersDataResponse {
   const factory FoldersDataResponse({
-    required List<Folder> folders,
+    required List<Folder> data,
   }) = _FoldersDataResponse;
 
   factory FoldersDataResponse.fromJson(Map<String, Object?> json) =>

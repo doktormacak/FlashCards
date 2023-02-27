@@ -4,19 +4,19 @@ import 'package:flash_cards/features/folders/domain/interactors/folders_interact
 import 'package:flash_cards/features/folders/infrastructure/folders_repository.dart';
 
 class FoldersIntractorImpl implements FoldersInteractor {
-  final FoldersRepository decksRepository;
+  final FoldersRepository foldersRepository;
 
-  FoldersIntractorImpl(this.decksRepository);
+  FoldersIntractorImpl(this.foldersRepository);
 
   @override
-  Future<List<Folder>> fetchDecks() async {
-    List<Folder> fetchedDecks;
+  Future<List<Folder>> fetchFolders() async {
+    List<Folder> fetchedFolders;
     try {
-      var response = await decksRepository.fetchAllDecks();
-      fetchedDecks = response.folders;
+      var response = await foldersRepository.fetchAllFolders();
+      fetchedFolders = response.data;
     } on DioError {
-      fetchedDecks = [];
+      fetchedFolders = [];
     }
-    return fetchedDecks;
+    return fetchedFolders;
   }
 }

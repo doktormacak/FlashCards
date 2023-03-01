@@ -1,0 +1,46 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Matematika",
+            "createdAt": "2023-02-26T14:29:02.532Z",
+            "updatedAt": "2023-02-26T14:29:02.532Z",
+            "userId": 1
+        },
+        {
+            "id": 2,
+            "name": "Hemija",
+            "createdAt": "2023-02-26T15:17:15.089Z",
+            "updatedAt": "2023-02-26T15:17:15.089Z",
+            "userId": 1
+        },
+        {
+            "id": 3,
+            "name": "Fizika",
+            "createdAt": "2023-02-26T15:17:27.556Z",
+            "updatedAt": "2023-02-26T15:17:27.556Z",
+            "userId": 1
+        },
+        {
+            "id": 4,
+            "name": "Istorija",
+            "createdAt": "2023-02-26T15:17:33.509Z",
+            "updatedAt": "2023-02-26T15:17:33.509Z",
+            "userId": 1
+        },
+        {
+            "id": 5,
+            "name": "Sociologija",
+            "createdAt": "2023-02-27T09:53:39.885Z",
+            "updatedAt": "2023-02-27T09:53:39.885Z",
+            "userId": 1
+        },
+        {
+            "id": 6,
+            "name": "Filozofija",
+            "createdAt": "2023-02-27T09:58:58.300Z",
+            "updatedAt": "2023-02-27T09:58:58.300Z",
+            "userId": 1
+        }
+    ]
+}

@@ -9,6 +9,8 @@ class Folder with _$Folder {
   const factory Folder({
     int? id,
     required String name,
+    required DateTime createdAt,
+    required DateTime updatedAt,
   }) = _Folder;
 
   factory Folder.fromJson(Map<String, Object?> json) => _$FolderFromJson(json);

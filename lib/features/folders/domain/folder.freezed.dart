@@ -22,6 +22,8 @@ Folder _$FolderFromJson(Map<String, dynamic> json) {
 mixin _$Folder {
   int? get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +35,7 @@ abstract class $FolderCopyWith<$Res> {
   factory $FolderCopyWith(Folder value, $Res Function(Folder) then) =
       _$FolderCopyWithImpl<$Res, Folder>;
   @useResult
-  $Res call({int? id, String name});
+  $Res call({int? id, String name, DateTime createdAt, DateTime updatedAt});
 }
 
 /// @nodoc
@@ -51,6 +53,8 @@ class _$FolderCopyWithImpl<$Res, $Val extends Folder>
   $Res call({
     Object? id = freezed,
     Object? name = null,
+    Object? createdAt = null,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -61,6 +65,14 @@ class _$FolderCopyWithImpl<$Res, $Val extends Folder>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ) as $Val);
   }
 }
@@ -71,7 +83,7 @@ abstract class _$$_FolderCopyWith<$Res> implements $FolderCopyWith<$Res> {
       __$$_FolderCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? id, String name});
+  $Res call({int? id, String name, DateTime createdAt, DateTime updatedAt});
 }
 
 /// @nodoc
@@ -86,6 +98,8 @@ class __$$_FolderCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? name = null,
+    Object? createdAt = null,
+    Object? updatedAt = null,
   }) {
     return _then(_$_Folder(
       id: freezed == id
@@ -96,6 +110,14 @@ class __$$_FolderCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -103,7 +125,11 @@ class __$$_FolderCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Folder with DiagnosticableTreeMixin implements _Folder {
-  const _$_Folder({this.id, required this.name});
+  const _$_Folder(
+      {this.id,
+      required this.name,
+      required this.createdAt,
+      required this.updatedAt});
 
   factory _$_Folder.fromJson(Map<String, dynamic> json) =>
       _$$_FolderFromJson(json);
@@ -112,10 +138,14 @@ class _$_Folder with DiagnosticableTreeMixin implements _Folder {
   final int? id;
   @override
   final String name;
+  @override
+  final DateTime createdAt;
+  @override
+  final DateTime updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Folder(id: $id, name: $name)';
+    return 'Folder(id: $id, name: $name, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -124,7 +154,9 @@ class _$_Folder with DiagnosticableTreeMixin implements _Folder {
     properties
       ..add(DiagnosticsProperty('type', 'Folder'))
       ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('name', name));
+      ..add(DiagnosticsProperty('name', name))
+      ..add(DiagnosticsProperty('createdAt', createdAt))
+      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override
@@ -133,12 +165,16 @@ class _$_Folder with DiagnosticableTreeMixin implements _Folder {
         (other.runtimeType == runtimeType &&
             other is _$_Folder &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name));
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name);
+  int get hashCode => Object.hash(runtimeType, id, name, createdAt, updatedAt);
 
   @JsonKey(ignore: true)
   @override
@@ -155,8 +191,11 @@ class _$_Folder with DiagnosticableTreeMixin implements _Folder {
 }
 
 abstract class _Folder implements Folder {
-  const factory _Folder({final int? id, required final String name}) =
-      _$_Folder;
+  const factory _Folder(
+      {final int? id,
+      required final String name,
+      required final DateTime createdAt,
+      required final DateTime updatedAt}) = _$_Folder;
 
   factory _Folder.fromJson(Map<String, dynamic> json) = _$_Folder.fromJson;
 
@@ -164,6 +203,10 @@ abstract class _Folder implements Folder {
   int? get id;
   @override
   String get name;
+  @override
+  DateTime get createdAt;
+  @override
+  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$_FolderCopyWith<_$_Folder> get copyWith =>

@@ -17,23 +17,22 @@ class FoldersScreen extends ConsumerWidget {
 }
 
 class _FoldersView extends ConsumerWidget {
-  const _FoldersView({super.key});
+  const _FoldersView();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final presenter = ref.watch(foldersPresenterProvider);
-    return Container(
-      child: presenter.state.when(
-        initial: () => const Center(
-          child: CircularProgressIndicator(),
+    return presenter.when(
+      data: (folders) {
+        return _FoldersListView(folders);
+      },
+      error: (error, stack) => Center(
+        child: Text(
+          error.toString(),
         ),
-        loading: (folders) => const Center(
-          child: CircularProgressIndicator(),
-        ),
-        success: (folders) => _FoldersListView(folders),
-        failure: (error) => Center(
-          child: Text(error.toString()),
-        ),
+      ),
+      loading: () => const Center(
+        child: CircularProgressIndicator(),
       ),
     );
   }

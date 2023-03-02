@@ -2,7 +2,7 @@ import 'package:flash_cards/routing/router_notifier.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../features/auth/login_screen.dart';
+import '../features/auth/presentation/login_screen.dart';
 import '../features/folders/presentation/widgets/folders_screen.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
@@ -22,7 +22,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(
         path: '/login',
-        builder: (context, state) => const LoginScreen(),
+        builder: (context, state) => LoginScreen(),
       ),
     ],
   );

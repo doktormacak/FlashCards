@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flash_cards/features/auth/domain/login_credentials.dart';
 
 class ApiClient {
   final Dio dio;
@@ -9,8 +10,8 @@ class ApiClient {
     return await dio.get(path);
   }
 
-  dynamic post(String path) async {
-    return await dio.post(path);
+  dynamic post(String path, LoginCredentials data) async {
+    return await dio.post(path, data: data);
   }
 
   dynamic put(String path) async {

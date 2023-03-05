@@ -1,3 +1,5 @@
+import 'package:flash_cards/features/auth/domain/login_credentials.dart';
+import 'package:flash_cards/features/auth/presentation/presenters/login_presenter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
@@ -12,6 +14,7 @@ class LoginScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final auth = ref.read(loginPresenterProvider.notifier);
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -47,9 +50,11 @@ class LoginScreen extends ConsumerWidget {
             ElevatedButton(
               onPressed: () {
                 _loginKey.currentState!.save();
-                print(_loginKey.currentState!.value);
+                final data = _loginKey.currentState!.value;
+                auth.logIn(LoginCredentials(
+                    email: data['email'], password: data['password']));
               },
-              child: Text('LogIn'),
+              child: const Text('LogIn'),
             ),
           ]),
         ),

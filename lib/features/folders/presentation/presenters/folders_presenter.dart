@@ -1,20 +1,17 @@
 import 'package:flash_cards/features/folders/domain/folder.dart';
 import 'package:flash_cards/features/folders/domain/interactors/folders_interactor.dart';
+import 'package:flash_cards/features/folders/domain/interactors/folders_interactor_impl.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-final foldersPresenterProvider =
-    AsyncNotifierProvider<FoldersPresenter, List<Folder>>(() {
-  return FoldersPresenter(GetIt.instance.get());
-});
+part 'folders_presenter.g.dart';
 
-class FoldersPresenter extends AsyncNotifier<List<Folder>> {
-  FoldersPresenter(this.foldersInteractor);
-
-  final FoldersInteractor foldersInteractor;
-
+@riverpod
+class FoldersPresenter extends _$FoldersPresenter {
   @override
   Future<List<Folder>> build() async {
+    final foldersInteractor = ref.watch(foldersIntractorImplProvider.notifier);
     return await foldersInteractor.fetchFolders();
   }
 }

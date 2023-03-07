@@ -1,15 +1,17 @@
 import 'package:dio/dio.dart';
 import 'package:flash_cards/features/folders/domain/folder.dart';
 import 'package:flash_cards/features/folders/domain/interactors/folders_interactor.dart';
-import 'package:flash_cards/features/folders/infrastructure/folders_repository.dart';
+import 'package:flash_cards/features/folders/infrastructure/folders_repository_impl.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-class FoldersIntractorImpl implements FoldersInteractor {
-  final FoldersRepository foldersRepository;
+part 'folders_interactor_impl.g.dart';
 
-  FoldersIntractorImpl(this.foldersRepository);
-
+@riverpod
+class FoldersIntractorImpl extends _$FoldersIntractorImpl
+    implements FoldersInteractor {
   @override
   Future<List<Folder>> fetchFolders() async {
+    final foldersRepository = ref.watch(foldersRepositoryImplProvider.notifier);
     List<Folder> fetchedFolders;
     try {
       var response = await foldersRepository.fetchAllFolders();
@@ -18,5 +20,10 @@ class FoldersIntractorImpl implements FoldersInteractor {
       fetchedFolders = [];
     }
     return fetchedFolders;
+  }
+
+  @override
+  build() {
+    return FoldersIntractorImpl();
   }
 }

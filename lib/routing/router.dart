@@ -9,7 +9,7 @@ final routerProvider = Provider<GoRouter>((ref) {
   final notifier = ref.watch(routerNotifierProvider);
 
   return GoRouter(
-    initialLocation: '/',
+    initialLocation: '/home',
     refreshListenable: notifier,
     routes: [
       GoRoute(

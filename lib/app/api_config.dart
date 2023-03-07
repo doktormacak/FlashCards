@@ -5,5 +5,5 @@ class ApiConfig {
   static const folders = 'folders';
   static const login = 'auth/signin';
   static const apiKey =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiZ2pvdmFuaTEyM0BnbWFpbC5jb20iLCJpYXQiOjE2Nzc1MDY3NTYsImV4cCI6MTY3NzUxMDM1Nn0.TbFHQDkD4Rwyn4XqQ9Pg-va-iVb67SSLtfbdFSUGbBA';
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiZ2pvdmFuaUBnbWFpbC5jb20iLCJpYXQiOjE2NzgyMTgzMzIsImV4cCI6MTY3ODIyMTkzMn0.RE-RKjAzY05i-7ThjzOTQWUdwY0modKijo5a5EXz9J4';
 }

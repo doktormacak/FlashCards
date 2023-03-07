@@ -14,7 +14,7 @@ class FoldersRepositoryImpl extends _$FoldersRepositoryImpl
     final apiClient = ref.watch(apiClientProvider.notifier);
     // final path = ref.watch(apiConfigProvider);
     return FoldersDataResponse.fromJson(
-        (await apiClient.get('http://localhost:3000/folders')).data);
+        (await apiClient.get(ApiConfig.folders)).data);
   }
 
   @override

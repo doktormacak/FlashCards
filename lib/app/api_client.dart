@@ -1,16 +1,20 @@
 import 'package:dio/dio.dart';
+import 'package:flash_cards/app/api_config.dart';
 import 'package:flash_cards/app/api_interceptor.dart';
-import 'package:flash_cards/app/dio.dart';
 import 'package:flash_cards/features/auth/domain/login_credentials.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:flutter_loggy_dio/flutter_loggy_dio.dart';
-import 'api_config.dart';
 
 part 'api_client.g.dart';
 
 @riverpod
 class ApiClient extends _$ApiClient {
-  final dio = Dio()
+  final dio = Dio(
+    BaseOptions(
+      baseUrl: ApiConfig.baseUrl,
+      connectTimeout: 5000,
+    ),
+  )
     ..interceptors.add(LoggyDioInterceptor())
     ..interceptors.add(ApiInterceptor());
 

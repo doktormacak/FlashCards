@@ -30,7 +30,7 @@ class _SystemHash {
 }
 
 String _$FoldersIntractorImplHash() =>
-    r'd08a946efc854f0e739ea37ca06c44f980f2b834';
+    r'ff83c6ba28e6b0d0522ad710195a59d0e13fb47f';
 
 /// See also [FoldersIntractorImpl].
 final foldersIntractorImplProvider =

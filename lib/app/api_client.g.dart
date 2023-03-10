@@ -29,18 +29,23 @@ class _SystemHash {
   }
 }
 
-String _$ApiClientHash() => r'24515e58fb16aba90350d622ebb9bf27aede7965';
+String _$apiClientHash() => r'543df4fb652ba3595a0c6e49f9b574f8e9da43f5';
 
-/// See also [ApiClient].
-final apiClientProvider = AutoDisposeNotifierProvider<ApiClient, dynamic>(
-  ApiClient.new,
+/// See also [apiClient].
+final apiClientProvider = FutureProvider<ApiClient>(
+  apiClient,
   name: r'apiClientProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$ApiClientHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$apiClientHash,
 );
-typedef ApiClientRef = AutoDisposeNotifierProviderRef<dynamic>;
+typedef ApiClientRef = FutureProviderRef<ApiClient>;
+String _$dioHash() => r'7f903e7be10803d84f80fd179b36a021548287d3';
 
-abstract class _$ApiClient extends AutoDisposeNotifier<dynamic> {
-  @override
-  dynamic build();
-}
+/// See also [dio].
+final dioProvider = FutureProvider<Dio>(
+  dio,
+  name: r'dioProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$dioHash,
+);
+typedef DioRef = FutureProviderRef<Dio>;

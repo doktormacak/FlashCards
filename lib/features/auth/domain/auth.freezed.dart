@@ -20,8 +20,8 @@ AuthToken _$AuthTokenFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AuthToken {
-  String get accessToken => throw _privateConstructorUsedError;
-  String get refreshToken => throw _privateConstructorUsedError;
+  String? get accessToken => throw _privateConstructorUsedError;
+  String? get refreshToken => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +34,7 @@ abstract class $AuthTokenCopyWith<$Res> {
   factory $AuthTokenCopyWith(AuthToken value, $Res Function(AuthToken) then) =
       _$AuthTokenCopyWithImpl<$Res, AuthToken>;
   @useResult
-  $Res call({String accessToken, String refreshToken});
+  $Res call({String? accessToken, String? refreshToken});
 }
 
 /// @nodoc
@@ -50,18 +50,18 @@ class _$AuthTokenCopyWithImpl<$Res, $Val extends AuthToken>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? accessToken = null,
-    Object? refreshToken = null,
+    Object? accessToken = freezed,
+    Object? refreshToken = freezed,
   }) {
     return _then(_value.copyWith(
-      accessToken: null == accessToken
+      accessToken: freezed == accessToken
           ? _value.accessToken
           : accessToken // ignore: cast_nullable_to_non_nullable
-              as String,
-      refreshToken: null == refreshToken
+              as String?,
+      refreshToken: freezed == refreshToken
           ? _value.refreshToken
           : refreshToken // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -73,7 +73,7 @@ abstract class _$$_AuthTokenCopyWith<$Res> implements $AuthTokenCopyWith<$Res> {
       __$$_AuthTokenCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String accessToken, String refreshToken});
+  $Res call({String? accessToken, String? refreshToken});
 }
 
 /// @nodoc
@@ -87,18 +87,18 @@ class __$$_AuthTokenCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? accessToken = null,
-    Object? refreshToken = null,
+    Object? accessToken = freezed,
+    Object? refreshToken = freezed,
   }) {
     return _then(_$_AuthToken(
-      accessToken: null == accessToken
+      accessToken: freezed == accessToken
           ? _value.accessToken
           : accessToken // ignore: cast_nullable_to_non_nullable
-              as String,
-      refreshToken: null == refreshToken
+              as String?,
+      refreshToken: freezed == refreshToken
           ? _value.refreshToken
           : refreshToken // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -112,9 +112,9 @@ class _$_AuthToken implements _AuthToken {
       _$$_AuthTokenFromJson(json);
 
   @override
-  final String accessToken;
+  final String? accessToken;
   @override
-  final String refreshToken;
+  final String? refreshToken;
 
   @override
   String toString() {
@@ -152,16 +152,16 @@ class _$_AuthToken implements _AuthToken {
 
 abstract class _AuthToken implements AuthToken {
   const factory _AuthToken(
-      {required final String accessToken,
-      required final String refreshToken}) = _$_AuthToken;
+      {required final String? accessToken,
+      required final String? refreshToken}) = _$_AuthToken;
 
   factory _AuthToken.fromJson(Map<String, dynamic> json) =
       _$_AuthToken.fromJson;
 
   @override
-  String get accessToken;
+  String? get accessToken;
   @override
-  String get refreshToken;
+  String? get refreshToken;
   @override
   @JsonKey(ignore: true)
   _$$_AuthTokenCopyWith<_$_AuthToken> get copyWith =>

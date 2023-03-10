@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'folders_presenter.dart';
+part of 'login_presenter.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -29,21 +29,20 @@ class _SystemHash {
   }
 }
 
-String _$FoldersPresenterHash() => r'9c41c077212bdf309cee48f9d2157a0f6bb8bffb';
+String _$LoginPresenterHash() => r'0ee2f21a91c492efe963bf1e00cb66db1cf92291';
 
-/// See also [FoldersPresenter].
-final foldersPresenterProvider =
-    AutoDisposeAsyncNotifierProvider<FoldersPresenter, List<Folder>>(
-  FoldersPresenter.new,
-  name: r'foldersPresenterProvider',
+/// See also [LoginPresenter].
+final loginPresenterProvider =
+    AutoDisposeNotifierProvider<LoginPresenter, dynamic>(
+  LoginPresenter.new,
+  name: r'loginPresenterProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$FoldersPresenterHash,
+      : _$LoginPresenterHash,
 );
-typedef FoldersPresenterRef = AutoDisposeAsyncNotifierProviderRef<List<Folder>>;
+typedef LoginPresenterRef = AutoDisposeNotifierProviderRef<dynamic>;
 
-abstract class _$FoldersPresenter
-    extends AutoDisposeAsyncNotifier<List<Folder>> {
+abstract class _$LoginPresenter extends AutoDisposeNotifier<dynamic> {
   @override
-  FutureOr<List<Folder>> build();
+  dynamic build();
 }

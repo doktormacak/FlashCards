@@ -1,9 +1,11 @@
+import 'package:flash_cards/app/secure_storage.dart';
 import 'package:flash_cards/features/auth/domain/auth.dart';
 import 'package:flash_cards/features/auth/domain/login_credentials.dart';
 import 'package:flash_cards/features/auth/presentation/presenters/login_presenter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class LoginScreen extends ConsumerWidget {
@@ -14,7 +16,7 @@ class LoginScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final auth = ref.read(loginPresenterProvider.notifier);
-    final token = ref.watch(authTokenNotifierProvider);
+    final token = ref.watch(secureLocalStorageProvider);
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -56,7 +58,6 @@ class LoginScreen extends ConsumerWidget {
               },
               child: const Text('LogIn'),
             ),
-            Text(token != null ? token.accessToken : 'Not Logged yet')
           ]),
         ),
       ),

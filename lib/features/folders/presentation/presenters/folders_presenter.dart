@@ -8,7 +8,7 @@ part 'folders_presenter.g.dart';
 class FoldersPresenter extends _$FoldersPresenter {
   @override
   Future<List<Folder>> build() async {
-    final foldersInteractor = ref.watch(foldersIntractorImplProvider.notifier);
+    final foldersInteractor = ref.read(foldersIntractorImplProvider.notifier);
     return await foldersInteractor.fetchFolders();
   }
 }

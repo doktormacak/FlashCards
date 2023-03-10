@@ -11,7 +11,7 @@ class FoldersIntractorImpl extends _$FoldersIntractorImpl
     implements FoldersInteractor {
   @override
   Future<List<Folder>> fetchFolders() async {
-    final foldersRepository = ref.watch(foldersRepositoryImplProvider.notifier);
+    final foldersRepository = ref.read(foldersRepositoryImplProvider.notifier);
     List<Folder> fetchedFolders;
     try {
       var response = await foldersRepository.fetchAllFolders();

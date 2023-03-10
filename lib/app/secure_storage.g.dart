@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'folders_presenter.dart';
+part of 'secure_storage.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -29,21 +29,17 @@ class _SystemHash {
   }
 }
 
-String _$FoldersPresenterHash() => r'9c41c077212bdf309cee48f9d2157a0f6bb8bffb';
+String _$secureLocalStorageHash() =>
+    r'c80c3013d90080b6053cf069a1fcdebf275634fd';
 
-/// See also [FoldersPresenter].
-final foldersPresenterProvider =
-    AutoDisposeAsyncNotifierProvider<FoldersPresenter, List<Folder>>(
-  FoldersPresenter.new,
-  name: r'foldersPresenterProvider',
+/// See also [secureLocalStorage].
+final secureLocalStorageProvider =
+    AutoDisposeFutureProvider<SecureLocalStorage>(
+  secureLocalStorage,
+  name: r'secureLocalStorageProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$FoldersPresenterHash,
+      : _$secureLocalStorageHash,
 );
-typedef FoldersPresenterRef = AutoDisposeAsyncNotifierProviderRef<List<Folder>>;
-
-abstract class _$FoldersPresenter
-    extends AutoDisposeAsyncNotifier<List<Folder>> {
-  @override
-  FutureOr<List<Folder>> build();
-}
+typedef SecureLocalStorageRef
+    = AutoDisposeFutureProviderRef<SecureLocalStorage>;

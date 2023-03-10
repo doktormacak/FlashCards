@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'folders_presenter.dart';
+part of 'auth_repository_impl.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -29,21 +29,14 @@ class _SystemHash {
   }
 }
 
-String _$FoldersPresenterHash() => r'9c41c077212bdf309cee48f9d2157a0f6bb8bffb';
+String _$authRepositoryHash() => r'ae16ce11c9bd6fdd0c84965cb1b5f78839d64545';
 
-/// See also [FoldersPresenter].
-final foldersPresenterProvider =
-    AutoDisposeAsyncNotifierProvider<FoldersPresenter, List<Folder>>(
-  FoldersPresenter.new,
-  name: r'foldersPresenterProvider',
+/// See also [authRepository].
+final authRepositoryProvider = AutoDisposeFutureProvider<AuthRepository>(
+  authRepository,
+  name: r'authRepositoryProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$FoldersPresenterHash,
+      : _$authRepositoryHash,
 );
-typedef FoldersPresenterRef = AutoDisposeAsyncNotifierProviderRef<List<Folder>>;
-
-abstract class _$FoldersPresenter
-    extends AutoDisposeAsyncNotifier<List<Folder>> {
-  @override
-  FutureOr<List<Folder>> build();
-}
+typedef AuthRepositoryRef = AutoDisposeFutureProviderRef<AuthRepository>;

@@ -11,10 +11,10 @@ class FoldersRepositoryImpl extends _$FoldersRepositoryImpl
     implements FoldersRepository {
   @override
   Future<FoldersDataResponse> fetchAllFolders() async {
-    final apiClient = ref.watch(apiClientProvider.notifier);
+    final apiClient = ref.read(apiClientProvider);
     // final path = ref.watch(apiConfigProvider);
     return FoldersDataResponse.fromJson(
-        (await apiClient.get(ApiConfig.folders)).data);
+        (await apiClient.value!.get(ApiConfig.folders)).data);
   }
 
   @override

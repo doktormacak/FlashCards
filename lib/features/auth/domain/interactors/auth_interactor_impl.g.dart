@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'folders_presenter.dart';
+part of 'auth_interactor_impl.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -29,21 +29,21 @@ class _SystemHash {
   }
 }
 
-String _$FoldersPresenterHash() => r'9c41c077212bdf309cee48f9d2157a0f6bb8bffb';
+String _$AuthInteractorImplHash() =>
+    r'944850f85c2a616b9ec55a67e7b7f04cfbb3c930';
 
-/// See also [FoldersPresenter].
-final foldersPresenterProvider =
-    AutoDisposeAsyncNotifierProvider<FoldersPresenter, List<Folder>>(
-  FoldersPresenter.new,
-  name: r'foldersPresenterProvider',
+/// See also [AuthInteractorImpl].
+final authInteractorImplProvider =
+    AutoDisposeAsyncNotifierProvider<AuthInteractorImpl, dynamic>(
+  AuthInteractorImpl.new,
+  name: r'authInteractorImplProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$FoldersPresenterHash,
+      : _$AuthInteractorImplHash,
 );
-typedef FoldersPresenterRef = AutoDisposeAsyncNotifierProviderRef<List<Folder>>;
+typedef AuthInteractorImplRef = AutoDisposeAsyncNotifierProviderRef<dynamic>;
 
-abstract class _$FoldersPresenter
-    extends AutoDisposeAsyncNotifier<List<Folder>> {
+abstract class _$AuthInteractorImpl extends AutoDisposeAsyncNotifier<dynamic> {
   @override
-  FutureOr<List<Folder>> build();
+  FutureOr<dynamic> build();
 }

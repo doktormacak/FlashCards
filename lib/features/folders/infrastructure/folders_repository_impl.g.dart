@@ -30,7 +30,7 @@ class _SystemHash {
 }
 
 String _$FoldersRepositoryImplHash() =>
-    r'2e78b757ae456e7ee483cf6d9f8c3ae18158b71e';
+    r'9347a8ce0467895787c64af24573d4776b094ca0';
 
 /// See also [FoldersRepositoryImpl].
 final foldersRepositoryImplProvider =

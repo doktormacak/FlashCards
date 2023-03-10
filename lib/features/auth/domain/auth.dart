@@ -1,5 +1,6 @@
+import 'package:flash_cards/app/secure_storage.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'auth.freezed.dart';
 part 'auth.g.dart';
@@ -7,34 +8,31 @@ part 'auth.g.dart';
 @freezed
 class AuthToken with _$AuthToken {
   const factory AuthToken({
-    required String accessToken,
-    required String refreshToken,
+    required String? accessToken,
+    required String? refreshToken,
   }) = _AuthToken;
 
   factory AuthToken.fromJson(Map<String, Object?> json) =>
       _$AuthTokenFromJson(json);
 }
 
-final authTokenNotifierProvider =
-    NotifierProvider<AuthTokenNotifier, AuthToken?>(() => AuthTokenNotifier());
-
-class AuthTokenNotifier extends Notifier<AuthToken?> {
-  @override
-  AuthToken? build() {
-    return const AuthToken(accessToken: '', refreshToken: '');
-  }
-
+@riverpod
+class AuthTokenNotifier extends _$AuthTokenNotifier {
   void setToken(AuthToken authToken) {
+    final secureStorage = ref.read(secureLocalStorageProvider);
     state = authToken.copyWith(
         accessToken: authToken.accessToken,
         refreshToken: authToken.refreshToken);
+    secureStorage.value!.setTokenInStorage(
+        key: "authToken", value: authToken.toJson().toString());
   }
 
   AuthToken? getToken() {
-    if (state != null) {
-      return state;
-    } else {
-      return null;
-    }
+    return state;
+  }
+
+  @override
+  build() {
+    return null;
   }
 }

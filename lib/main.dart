@@ -4,7 +4,7 @@ import 'package:flutter_loggy/flutter_loggy.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loggy/loggy.dart';
 
-main() {
+main() async {
   WidgetsFlutterBinding.ensureInitialized();
   _initLoggy();
   runApp(

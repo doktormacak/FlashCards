@@ -29,21 +29,14 @@ class _SystemHash {
   }
 }
 
-String _$AuthInteractorImplHash() =>
-    r'944850f85c2a616b9ec55a67e7b7f04cfbb3c930';
+String _$authInteractorHash() => r'4a326780ddd5e65f7b6d134741a7860691e29965';
 
-/// See also [AuthInteractorImpl].
-final authInteractorImplProvider =
-    AutoDisposeAsyncNotifierProvider<AuthInteractorImpl, dynamic>(
-  AuthInteractorImpl.new,
-  name: r'authInteractorImplProvider',
+/// See also [authInteractor].
+final authInteractorProvider = AutoDisposeFutureProvider<AuthInteractor>(
+  authInteractor,
+  name: r'authInteractorProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$AuthInteractorImplHash,
+      : _$authInteractorHash,
 );
-typedef AuthInteractorImplRef = AutoDisposeAsyncNotifierProviderRef<dynamic>;
-
-abstract class _$AuthInteractorImpl extends AutoDisposeAsyncNotifier<dynamic> {
-  @override
-  FutureOr<dynamic> build();
-}
+typedef AuthInteractorRef = AutoDisposeFutureProviderRef<AuthInteractor>;

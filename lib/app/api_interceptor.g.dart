@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'secure_storage.dart';
+part of 'api_interceptor.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -29,15 +29,14 @@ class _SystemHash {
   }
 }
 
-String _$secureLocalStorageHash() =>
-    r'62f232d81a2c6ed3bb85684c3e5ef9bb3c2925e8';
+String _$apiInterceptorHash() => r'6f3147c1745bbe9eb0cfdae0ea68e089de04297c';
 
-/// See also [secureLocalStorage].
-final secureLocalStorageProvider = FutureProvider<SecureLocalStorage>(
-  secureLocalStorage,
-  name: r'secureLocalStorageProvider',
+/// See also [apiInterceptor].
+final apiInterceptorProvider = FutureProvider<ApiInterceptor>(
+  apiInterceptor,
+  name: r'apiInterceptorProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$secureLocalStorageHash,
+      : _$apiInterceptorHash,
 );
-typedef SecureLocalStorageRef = FutureProviderRef<SecureLocalStorage>;
+typedef ApiInterceptorRef = FutureProviderRef<ApiInterceptor>;

@@ -7,10 +7,9 @@ part 'login_presenter.g.dart';
 
 @riverpod
 class LoginPresenter extends _$LoginPresenter {
-// return authToken or Error - login failed(reason)
-  Future<AuthToken?> logIn(LoginCredentials credentials) async {
+  Future<void> logIn(LoginCredentials credentials) async {
     final authInteractor = await ref.read(authInteractorProvider.future);
-    return await authInteractor.logIn(credentials: credentials);
+    await authInteractor.logIn(credentials: credentials);
   }
 
   @override

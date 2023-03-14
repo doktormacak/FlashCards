@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flash_cards/app/api_config.dart';
 import 'package:flash_cards/app/api_interceptor.dart';
-import 'package:flash_cards/app/secure_storage.dart';
 import 'package:flash_cards/features/auth/domain/auth.dart';
 import 'package:flash_cards/features/auth/domain/login_credentials.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -36,13 +35,9 @@ class ApiClient {
 }
 
 @Riverpod(keepAlive: true)
-Future<Dio> dio(ref) async {
-  final tokenStorage =
-      await ref.watch(secureLocalStorageProvider).value!.getTokensFromStorage();
-
-  final authToken = AuthToken.fromJson(tokenStorage);
-  print(authToken);
-
+Future<Dio> dio(DioRef ref) async {
+  final ApiInterceptor interceptor =
+      await ref.watch(apiInterceptorProvider.future);
   final Dio dio = Dio(
     BaseOptions(
       baseUrl: ApiConfig.baseUrl,
@@ -50,9 +45,7 @@ Future<Dio> dio(ref) async {
     ),
   )
     ..interceptors.add(LoggyDioInterceptor())
-    ..interceptors.add(ApiInterceptor(AuthToken(
-        accessToken: authToken.accessToken,
-        refreshToken: authToken.refreshToken)));
+    ..interceptors.add(interceptor);
 
   return dio;
 }

@@ -7,8 +7,8 @@ part of 'auth.dart';
 // **************************************************************************
 
 _$_AuthToken _$$_AuthTokenFromJson(Map<String, dynamic> json) => _$_AuthToken(
-      accessToken: json['accessToken'] as String?,
-      refreshToken: json['refreshToken'] as String?,
+      accessToken: json['access_token'] as String?,
+      refreshToken: json['refresh_token'] as String?,
     );
 
 Map<String, dynamic> _$$_AuthTokenToJson(_$_AuthToken instance) =>
@@ -44,20 +44,19 @@ class _SystemHash {
   }
 }
 
-String _$AuthTokenNotifierHash() => r'ca124db0962144fc4b2da917c00deae569eab64c';
+String _$AuthTokenNotifierHash() => r'e412b6cd9e5acc6c69073b055d70ac3ce5e10fad';
 
 /// See also [AuthTokenNotifier].
-final authTokenNotifierProvider =
-    AutoDisposeNotifierProvider<AuthTokenNotifier, dynamic>(
+final authTokenNotifierProvider = NotifierProvider<AuthTokenNotifier, dynamic>(
   AuthTokenNotifier.new,
   name: r'authTokenNotifierProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
       : _$AuthTokenNotifierHash,
 );
-typedef AuthTokenNotifierRef = AutoDisposeNotifierProviderRef<dynamic>;
+typedef AuthTokenNotifierRef = NotifierProviderRef<dynamic>;
 
-abstract class _$AuthTokenNotifier extends AutoDisposeNotifier<dynamic> {
+abstract class _$AuthTokenNotifier extends Notifier<dynamic> {
   @override
   dynamic build();
 }

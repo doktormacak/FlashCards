@@ -16,19 +16,23 @@ class AuthToken with _$AuthToken {
       _$AuthTokenFromJson(json);
 }
 
-@riverpod
+@Riverpod(keepAlive: true)
 class AuthTokenNotifier extends _$AuthTokenNotifier {
-  void setToken(AuthToken authToken) {
-    final secureStorage = ref.read(secureLocalStorageProvider);
+  void setToken(AuthToken authToken) async {
+    final secureStorage = await ref.watch(secureLocalStorageProvider.future);
     state = authToken.copyWith(
         accessToken: authToken.accessToken,
         refreshToken: authToken.refreshToken);
-    secureStorage.value!.setTokenInStorage(
+    await secureStorage.setTokenInStorage(
         key: "authToken", value: authToken.toJson().toString());
   }
 
-  AuthToken? getToken() {
-    return state;
+  Future<AuthToken?> getToken() async {
+    final secureStorage = await ref.watch(secureLocalStorageProvider.future);
+    final tokenFromStorage =
+        await secureStorage.getTokenFromStorage(key: "authToken");
+    return AuthToken(
+        accessToken: tokenFromStorage![0], refreshToken: tokenFromStorage[1]);
   }
 
   @override

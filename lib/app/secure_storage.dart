@@ -3,13 +3,13 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'secure_storage.g.dart';
 
-@riverpod
+@Riverpod(keepAlive: true)
 Future<SecureLocalStorage> secureLocalStorage(SecureLocalStorageRef ref) async {
   return SecureLocalStorage();
 }
 
 class SecureLocalStorage {
-  final storage = FlutterSecureStorage();
+  static final FlutterSecureStorage storage = FlutterSecureStorage();
 
   Future<void> setTokenInStorage({required String key, required value}) async {
     await storage.write(key: key, value: value);
@@ -19,8 +19,8 @@ class SecureLocalStorage {
     await storage.delete(key: key);
   }
 
-  Future<Map<String, Object?>> getTokensFromStorage() async {
-    final token = await storage.readAll();
+  Future<String?> getTokenFromStorage({required String key}) async {
+    final String? token = await storage.read(key: key);
     return token;
   }
 }

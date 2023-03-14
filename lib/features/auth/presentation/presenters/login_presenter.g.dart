@@ -29,7 +29,7 @@ class _SystemHash {
   }
 }
 
-String _$LoginPresenterHash() => r'ad764295e5057930e0740263b87059ceea357cac';
+String _$LoginPresenterHash() => r'1af530e4c9650809325654b5cd50cbb832355360';
 
 /// See also [LoginPresenter].
 final loginPresenterProvider =

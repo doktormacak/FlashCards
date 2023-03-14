@@ -1,6 +1,4 @@
 import 'dart:async';
-import 'package:dio/dio.dart';
-import 'package:flash_cards/features/auth/domain/auth.dart';
 import 'package:flash_cards/features/auth/domain/interactors/auth_interactor.dart';
 import 'package:flash_cards/features/auth/domain/login_credentials.dart';
 import 'package:flash_cards/features/auth/infrastructure/auth_repository.dart';
@@ -12,26 +10,17 @@ part 'auth_interactor_impl.g.dart';
 @riverpod
 Future<AuthInteractor> authInteractor(AuthInteractorRef ref) async {
   return AuthInteractorImpl(
-      authRepository: await ref.watch(authRepositoryProvider.future),
-      authToken: await ref.watch(authTokenNotifierProvider.notifier));
+    authRepository: await ref.watch(authRepositoryProvider.future),
+  );
 }
 
 class AuthInteractorImpl implements AuthInteractor {
-  AuthInteractorImpl({required this.authRepository, required this.authToken});
+  AuthInteractorImpl({required this.authRepository});
 
   final AuthRepository authRepository;
-  final AuthTokenNotifier authToken;
 
   @override
-  Future<AuthToken?> logIn({required LoginCredentials credentials}) async {
-    //case authtoken != null, authtoken(), isLogged = true
-    try {
-      final AuthToken authResponse =
-          await authRepository.logIn(credentials: credentials);
-      authToken.setToken(authResponse);
-      return authResponse;
-    } on DioError {
-      return null;
-    }
+  Future<void> logIn({required LoginCredentials credentials}) async {
+    await authRepository.logIn(credentials: credentials);
   }
 }

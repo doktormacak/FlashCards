@@ -39,7 +39,7 @@ final apiClientProvider = FutureProvider<ApiClient>(
       const bool.fromEnvironment('dart.vm.product') ? null : _$apiClientHash,
 );
 typedef ApiClientRef = FutureProviderRef<ApiClient>;
-String _$dioHash() => r'7f903e7be10803d84f80fd179b36a021548287d3';
+String _$dioHash() => r'dba853bc98804b81e945743de6c26ce776f33fcf';
 
 /// See also [dio].
 final dioProvider = FutureProvider<Dio>(
